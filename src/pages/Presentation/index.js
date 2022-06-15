@@ -53,8 +53,10 @@ function Presentation() {
         routes={routes}
         action={{
           type: "external",
-          route: "./layouts/pages/authentication/sign-in",
-          label: "Sign In",
+          route1: "./layouts/pages/authentication/sign-in",
+          route2: "./layouts/pages/authentication/sign-in",
+          label1: "Login",
+          label2: "Sign up",
           color: "info",
         }}
         sticky
