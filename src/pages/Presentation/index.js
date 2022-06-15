@@ -42,7 +42,6 @@ import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
-
 // Images
 import bgImage from "assets/images/bg-presentation.jpg";
 
@@ -54,9 +53,9 @@ function Presentation() {
         action={{
           type: "external",
           route1: "./layouts/pages/authentication/sign-in",
-          route2: "./layouts/pages/authentication/sign-in",
+          route2: "./New components/signup/signup",
           label1: "Login",
-          label2: "Sign up",
+          label2: "Sign Up",
           color: "info",
         }}
         sticky

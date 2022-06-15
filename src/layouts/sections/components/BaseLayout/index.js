@@ -40,8 +40,10 @@ function BaseLayout({ breadcrumb, title, children }) {
           routes={routes}
           action={{
             type: "external",
-            route: "https://www.creative-tim.com/product/material-kit-react",
-            label: "free download",
+            route1: "./layouts/pages/authentication/sign-in",
+            route2: "./New components/signup/signup",
+            label1: "Login",
+            label2: "Sign up",
             color: "info",
           }}
           transparent

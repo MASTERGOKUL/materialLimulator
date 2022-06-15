@@ -67,7 +67,6 @@ import Dropdowns from "layouts/sections/elements/dropdowns";
 import ProgressBars from "layouts/sections/elements/progress-bars";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography";
-import SignInPage from "layouts/pages/authentication/sign-in";
 
 const routes = [
   {
@@ -116,7 +115,7 @@ const routes = [
   {
     name: "services",
     route: "layouts/pages/authentication/sign-in",
-    component: <SignInPage />,
+    component: "",
   },
   {
     name: "portfolio",

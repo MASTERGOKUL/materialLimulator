@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState } from "react";
 
 // react-router-dom components
@@ -38,8 +23,6 @@ import MKButton from "components/MKButton";
 // Material Kit 2 React example components
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import SimpleFooter from "examples/Footers/SimpleFooter";
-import SignUpBasic from "New components/singnup/singnup";
-import SignInPage from "layouts/pages/authentication/sign-in";
 
 // Material Kit 2 React page layout routes
 import routes from "routes";
@@ -47,7 +30,7 @@ import routes from "routes";
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
-function SignInBasic() {
+function SignUpBasic() {
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
@@ -63,8 +46,6 @@ function SignInBasic() {
           label1: "Login",
           label2: "Sign up",
           color: "info",
-          component1: <SignInPage />,
-          component2: <SignUpBasic />,
         }}
         sticky
       />
@@ -102,7 +83,7 @@ function SignInBasic() {
                 textAlign="center"
               >
                 <MKTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-                  Login
+                  Sing Up
                 </MKTypography>
                 <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
                   <Grid item xs={2}>
@@ -130,6 +111,9 @@ function SignInBasic() {
                   <MKBox mb={2}>
                     <MKInput type="password" label="Password" fullWidth />
                   </MKBox>
+                  <MKBox mb={2}>
+                    <MKInput type="password" label="Confirm Password" fullWidth />
+                  </MKBox>
                   <MKBox display="flex" alignItems="center" ml={-1}>
                     <Switch checked={rememberMe} onChange={handleSetRememberMe} />
                     <MKTypography
@@ -144,12 +128,12 @@ function SignInBasic() {
                   </MKBox>
                   <MKBox mt={4} mb={1}>
                     <MKButton variant="gradient" color="info" fullWidth>
-                      Login
+                      Sign Up
                     </MKButton>
                   </MKBox>
                   <MKBox mt={3} mb={1} textAlign="center">
                     <MKTypography variant="button" color="text">
-                      Don&apos;t have an account?{" "}
+                      Already have an account?{" "}
                       <MKTypography
                         component={Link}
                         to="/authentication/sign-up/cover"
@@ -158,7 +142,7 @@ function SignInBasic() {
                         fontWeight="medium"
                         textGradient
                       >
-                        Sign up
+                        Login
                       </MKTypography>
                     </MKTypography>
                   </MKBox>
@@ -175,4 +159,4 @@ function SignInBasic() {
   );
 }
 
-export default SignInBasic;
+export default SignUpBasic;
