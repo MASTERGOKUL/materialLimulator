@@ -110,13 +110,13 @@ const routes = [
     ], */
   },
   {
-    name: "about",
+    name: "about us",
     route: "/about",
     component: <AboutUs />,
   },
   {
     name: "services",
-    route: "layouts/pages/authentication/sign-in",
+    route: "#",
     component: "",
   },
   {

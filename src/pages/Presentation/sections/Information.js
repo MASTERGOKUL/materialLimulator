@@ -44,19 +44,21 @@ function Information() {
                   <>
                     Feel the
                     <br />
-                    Material Kit
+                    LiDAR
+                    <br />
+                    <br />
                   </>
                 }
-                description="All the MUI components that you need in a development have been re-design with the new look."
+                description="NOAA scientists are using Limulator to produce more accurate LiDAR data"
               />
               <RotatingCardBack
                 image={bgBack}
-                title="Discover More"
-                description="You will save a lot of time going from prototyping to full-functional code because all elements are implemented."
+                title="Buy One"
+                description="You will save a lot of time going from prototyping to full-functional data because all data are here."
                 action={{
                   type: "internal",
                   route: "/sections/page-sections/page-headers",
-                  label: "start with header",
+                  label: "start with Us",
                 }}
               />
             </RotatingCard>
@@ -66,14 +68,14 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="content_copy"
-                  title="Full Documentation"
-                  description="On our website"
+                  title="LiDAR"
+                  description="produce more accurate shoreline maps,using in geographic information systems, to assist in emergency response operations, and in many."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="flip_to_front"
-                  title="GUI Rich"
+                  title="Rich GUI"
                   description="The Limulator software is having a rich GUI user interface so that a user can use this software with  ease. A help tool  is available with this to guide the user. "
                 />
               </Grid>
@@ -83,14 +85,14 @@ function Information() {
                 <DefaultInfoCard
                   icon="price_change"
                   title="Save Time & Money"
-                  description="Creating your design from scratch with dedicated designers can be very expensive. Start with our Design System."
+                  description="Creating your own LiDAR from scratch with dedicated designers can be very expensive. Start with our Limulator."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="devices"
                   title="Fully Responsive"
-                  description="Regardless of the screen size, the website content will naturally fit the given resolution."
+                  description="Regardless of the device, the Limulator will naturally fit the given system."
                 />
               </Grid>
             </Grid>
