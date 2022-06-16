@@ -68,7 +68,7 @@ import ProgressBars from "layouts/sections/elements/progress-bars";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography";
 import Filter from "New components/filter/filter";
-import Counters from "pages/Presentation/sections/Counters";
+import AboutUs from "pages/LandingPages/AboutUs";
 
 const routes = [
   {
@@ -112,7 +112,7 @@ const routes = [
   {
     name: "about",
     route: "/about",
-    component: <Counters />,
+    component: <AboutUs />,
   },
   {
     name: "services",

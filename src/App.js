@@ -31,7 +31,7 @@ import routes from "routes";
 import Filter from "New components/filter/filter";
 import SignInPage from "layouts/pages/authentication/sign-in";
 import SignUpBasic from "New components/singnup/singnup";
-import Counters from "pages/Presentation/sections/Counters";
+import AboutUs from "pages/LandingPages/AboutUs";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -64,7 +64,7 @@ export default function App() {
         <Route path="/filter" element={<Filter />} />
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/signup" element={<SignUpBasic />} />
-        <Route path="/about" element={<Counters />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
       </Routes>
     </ThemeProvider>
