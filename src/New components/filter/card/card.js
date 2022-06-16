@@ -3,8 +3,8 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import React from "react";
 import { Form } from "react-bootstrap";
-
-function Cards() {
+/* eslint-disable */
+function Cards({name, lab1, lab2, lab3 }) {
   return (
     <div item xs={0} sm={0} md={0} lg={0} xl={3} ml={{ xs: 0, lg: 0 }} height="auto">
       <MKBox
@@ -28,7 +28,7 @@ function Cards() {
           mt={-3}
         >
           <MKTypography variant="h3" color="white">
-            d
+            {name}
           </MKTypography>
         </MKBox>
         <MKBox p={7}>
@@ -37,9 +37,9 @@ function Cards() {
               <Grid item xs={0} md={-55} mx={-15}>
                 <h4>
                   <Form>
-                    <Form.Check aria-label="option 1" label="{props.lab1}" name="group1" />
-                    <Form.Check aria-label="option 1" label="{props.lab2}" name="group1" />
-                    <Form.Check aria-label="option 1" label="{props.lab3}" name="group1" />
+                    <Form.Check aria-label="option 1" label={lab1} name="group1" />
+                    <Form.Check aria-label="option 1" label={lab2} name="group1" />
+                    <Form.Check aria-label="option 1" label={lab3} name="group1" />
                   </Form>
                 </h4>
               </Grid>
