@@ -37,18 +37,7 @@ function SignUpBasic() {
 
   return (
     <>
-      <DefaultNavbar
-        routes={routes}
-        action={{
-          type: "external",
-          route1: "./layouts/pages/authentication/sign-in",
-          route2: "./New components/signup/signup",
-          label1: "Login",
-          label2: "Sign up",
-          color: "info",
-        }}
-        sticky
-      />
+      <DefaultNavbar routes={routes} sticky />
       <MKBox
         position="absolute"
         top={0}
@@ -127,7 +116,13 @@ function SignUpBasic() {
                     </MKTypography>
                   </MKBox>
                   <MKBox mt={4} mb={1}>
-                    <MKButton variant="gradient" color="info" fullWidth>
+                    <MKButton
+                      variant="gradient"
+                      component={Link}
+                      to="/presentation"
+                      color="info"
+                      fullWidth
+                    >
                       Sign Up
                     </MKButton>
                   </MKBox>
@@ -136,7 +131,7 @@ function SignUpBasic() {
                       Already have an account?{" "}
                       <MKTypography
                         component={Link}
-                        to="/authentication/sign-up/cover"
+                        to="/signin"
                         variant="button"
                         color="info"
                         fontWeight="medium"

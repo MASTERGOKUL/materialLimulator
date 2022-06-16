@@ -41,13 +41,11 @@ function ContactUs() {
           routes={routes}
           action={{
             type: "external",
-            route1: "./layouts/pages/authentication/sign-in",
-            route2: "./New components/signup/signup",
+            route1: "/signin",
+            route2: "/signup",
             label1: "Login",
             label2: "Sign up",
             color: "info",
-            component1: <SignInPage />,
-            component2: <SignUpBasic />,
           }}
         />
       </MKBox>

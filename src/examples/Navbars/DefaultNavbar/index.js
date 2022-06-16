@@ -493,7 +493,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
               (action.type === "internal" ? (
                 <>
                   <MKButton
-                    component={action.component1}
+                    component={Link}
                     to={action.route1}
                     variant={
                       action.color === "white" || action.color === "default"
@@ -506,7 +506,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                     {action.label1}
                   </MKButton>{" "}
                   <MKButton
-                    component={action.component2}
+                    component={Link}
                     to={action.route2}
                     variant={
                       action.color === "white" || action.color === "default"
@@ -522,7 +522,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
               ) : (
                 <>
                   <MKButton
-                    component={action.component1}
+                    component="a"
                     href={action.route1}
                     target="_blank"
                     rel="noreferrer"
@@ -537,7 +537,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                     {action.label1}
                   </MKButton>{" "}
                   <MKButton
-                    component={action.component2}
+                    component="a"
                     href={action.route2}
                     target="_blank"
                     rel="noreferrer"

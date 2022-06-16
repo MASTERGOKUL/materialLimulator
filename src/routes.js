@@ -67,6 +67,8 @@ import Dropdowns from "layouts/sections/elements/dropdowns";
 import ProgressBars from "layouts/sections/elements/progress-bars";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography";
+import Filter from "New components/filter/filter";
+import Counters from "pages/Presentation/sections/Counters";
 
 const routes = [
   {
@@ -109,8 +111,8 @@ const routes = [
   },
   {
     name: "about",
-    route: "/sections/navigation/nav-tabs",
-    component: <NavTabs />,
+    route: "/about",
+    component: <Counters />,
   },
   {
     name: "services",
@@ -124,8 +126,8 @@ const routes = [
   },
   {
     name: "filter",
-    route: "#",
-    component: "",
+    route: "/filter",
+    component: <Filter />,
   },
   {
     name: "pricing",

@@ -67,15 +67,14 @@ function Information() {
                 <DefaultInfoCard
                   icon="content_copy"
                   title="Full Documentation"
-                  description="Built by developers for developers. Check the foundation and you will find
-                    everything inside our documentation."
+                  description="On our website"
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="flip_to_front"
-                  title="MUI Ready"
-                  description="The world's most popular react components library for building user interfaces."
+                  title="GUI Rich"
+                  description="The Limulator software is having a rich GUI user interface so that a user can use this software with  ease. A help tool  is available with this to guide the user. "
                 />
               </Grid>
             </Grid>

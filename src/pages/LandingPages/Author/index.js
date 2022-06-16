@@ -46,8 +46,6 @@ function Author() {
           label1: "Login",
           label2: "Sign up",
           color: "info",
-          component1: <SignInPage />,
-          component2: <SignUpBasic />,
         }}
         transparent
         light

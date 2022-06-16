@@ -19,8 +19,6 @@ import MKBox from "components/MKBox";
 
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import SignInPage from "layouts/pages/authentication/sign-in";
-import SignUpBasic from "New components/singnup/singnup";
 
 // Routes
 import routes from "routes";
@@ -37,8 +35,6 @@ function NavbarDark() {
           label1: "Login",
           label2: "Sign up",
           color: "info",
-          component1: <SignInPage />,
-          component2: <SignUpBasic />,
         }}
         transparent
         relative

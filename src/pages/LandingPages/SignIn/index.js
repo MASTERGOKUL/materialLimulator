@@ -38,8 +38,6 @@ import MKButton from "components/MKButton";
 // Material Kit 2 React example components
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import SimpleFooter from "examples/Footers/SimpleFooter";
-import SignUpBasic from "New components/singnup/singnup";
-import SignInPage from "layouts/pages/authentication/sign-in";
 
 // Material Kit 2 React page layout routes
 import routes from "routes";
@@ -54,20 +52,7 @@ function SignInBasic() {
 
   return (
     <>
-      <DefaultNavbar
-        routes={routes}
-        action={{
-          type: "external",
-          route1: "./layouts/pages/authentication/sign-in",
-          route2: "./New components/signup/signup",
-          label1: "Login",
-          label2: "Sign up",
-          color: "info",
-          component1: <SignInPage />,
-          component2: <SignUpBasic />,
-        }}
-        sticky
-      />
+      <DefaultNavbar routes={routes} sticky />
       <MKBox
         position="absolute"
         top={0}
@@ -152,7 +137,7 @@ function SignInBasic() {
                       Don&apos;t have an account?{" "}
                       <MKTypography
                         component={Link}
-                        to="/authentication/sign-up/cover"
+                        to="/signup"
                         variant="button"
                         color="info"
                         fontWeight="medium"
