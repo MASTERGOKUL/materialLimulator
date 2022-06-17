@@ -1,6 +1,7 @@
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import React from "react";
+import MKButton from "components/MKButton";
 import details from "./maincarddetails";
 
 function Main() {
@@ -15,7 +16,7 @@ function Main() {
         mt={-85}
         mb={10}
         mx={5}
-        height={"auto"}
+        height="auto"
       >
         <MKBox
           variant="gradient"
@@ -30,28 +31,27 @@ function Main() {
             <p>Details</p>
           </MKTypography>
         </MKBox>
-        <div p={60} >
-            <div >
-              {details.map((details,index) => (
-                 <MKBox 
-                 key={index}    
-                 variant="gradient"
-                 bgColor="grey"
-                 coloredShadow="info"
-                 borderRadius="lg"
-                 p={2}
-                 mx={10}
-                 mt={3}
-                 mb={3}>
-                  <h2>{details.head}</h2>
-                  <button>{details.btnName}</button>
-                  <p>{details.description}</p>
+        <div p={60}>
+          <div>
+            {details.map((detail, index) => (
+              <MKBox
+                key={index.toString()}
+                variant="gradient"
+                bgColor="grey"
+                coloredShadow="info"
+                borderRadius="lg"
+                p={2}
+                mx={10}
+                mt={3}
+                mb={3}
+              >
+                <h2>{detail.head}</h2>
+                <MKButton>{detail.btnName}</MKButton>
+                <p>{detail.description}</p>
               </MKBox>
-             ))
-
-             }
-            </div>
+            ))}
           </div>
+        </div>
       </MKBox>
     </div>
   );
