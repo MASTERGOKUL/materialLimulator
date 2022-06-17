@@ -8,22 +8,14 @@ import FormControl from "@mui/material/FormControl";
 import FormGroup from "@mui/material/FormGroup";
 
 /* eslint-disable */
-function Cards({ name, lab1, lab2, lab3 }) {
-  const [state, setState] = React.useState({
-    gilad: true,
-    jason: false,
-    antoine: false,
-  });
+function Cards({ name, options, selected }) {
+  const [selectedOption, setSelectedOption] = React.useState(selected);
 
-  const handleChange = () => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.checked,
-    });
+  const handleChange = (e,option) => {
+    e.preventDefault();
+    console.log(option);
+    setSelectedOption(option);
   };
-
-  const { gilad, jason, antoine } = state;
-  const error = [gilad, jason, antoine].filter((v) => v).length !== 2;
   return (
     <div item xs={0} sm={0} md={0} lg={0} xl={3} ml={{ xs: 0, lg: 0 }} height="auto">
       <MKBox
@@ -46,38 +38,31 @@ function Cards({ name, lab1, lab2, lab3 }) {
           mx={2}
           mt={-3}
         >
-          <MKTypography variant="h3" color="white">
+          <MKTypography variant="h5" color="white">
             {name}
           </MKTypography>
         </MKBox>
-        <MKBox p={7}>
-          <MKBox width="100%" component="form" method="post" autocomplete="off" mx={15}>
+        <MKBox pl={7}>
+          <MKBox width="100%" component="form" method="post" autocomplete="off" mx={10}>
             <Grid container spacing={0}>
               <Grid item xs={0} md={-55} mx={-15}>
-                <h4>
+                <h5>
                   <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
                     <FormGroup>
-                      <FormControlLabel
-                        control={
-                          <Checkbox checked={gilad} onChange={handleChange} name="gilad" />
-                        }
-                        label={lab1}
-                      />
-                      <FormControlLabel
-                        control={
-                          <Checkbox checked={jason} onChange={handleChange} name="jason" />
-                        }
-                        label={lab2}
-                      />
-                      <FormControlLabel
-                        control={
-                          <Checkbox checked={antoine} onChange={handleChange} name="antoine" />
-                        }
-                        label={lab3}
-                      />
+                      {options.map((option, index) => {
+                        return (
+                          <FormControlLabel
+                            key={index.toString()}
+                            control={
+                              <Checkbox checked={selectedOption === option ? true: false} onChange={(e)=>handleChange(e,option)} name="gilad" />
+                            }
+                            label={option.toUpperCase()}
+                          />
+                        );
+                      })}                      
                     </FormGroup>
                   </FormControl>
-                </h4>
+                </h5>
               </Grid>
             </Grid>
           </MKBox>
