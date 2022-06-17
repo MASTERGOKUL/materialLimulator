@@ -25,18 +25,18 @@ function Filter() {
         <Grid mt={20} xs={2}>
           <Cards
             name="  Environment"
-            options={["Clear", "Rainy", "Foggy", "Dusty", "all"]}
+            options={["clear", "rainy", "foggy", "dusty", "all"]}
             selected="all"
           />
-          <Cards name="  Datatype" options={["Field", "Simulated", "all"]} selected="all" />
+          <Cards name="  Datatype" options={["field", "simulated", "all"]} selected="all" />
           <Cards
             name="  Point Record"
-            options={["XYZ", "XYZL", "XYZRGB", "XYZLRGB", "all"]}
+            options={["xyz", "xyzl", "xyzrgb", "xyzlrgb", "all"]}
             selected="all"
           />
           <Cards
             name="  Terrain"
-            options={["Urban", "Semi-Urban", "Rural", "Forest", "all"]}
+            options={["urban", "semi-urban", "rural", "forest", "all"]}
             selected="all"
           />
           <Cards
