@@ -32,9 +32,9 @@ function Filter() {
                 lab3="   3D model"
               />
               <Cards name="   Sensor types" lab1="  ALS" lab2="  MLS" lab3="  TLS" />
-              <Cards name="   Attribute" lab1="   Intensity" lab2="   RGB" lab3="   etc" />
-              <Cards name="   Attribute" lab1="   Intensity" lab2="   RGB" lab3="   etc" />
-              <Cards name="   Attribute" lab1="   Intensity" lab2="   RGB" lab3="   etc" />
+              <Cards name="   Attribute" lab1="   XYZ" lab2="   RGB" lab3="   XYZR" />
+              <Cards name="   Price" lab1="   Paid" lab2="   Free" lab3="   Financial Aid" />
+              <Cards name="   Sensor Parameters" lab1="   PFR" lab2="   Scan line" lab3=" others" />
             </Grid>
           </td>
           <td>

@@ -15,7 +15,7 @@ function Main() {
         mt={-85}
         mb={10}
         mx={5}
-        height={"auto"}
+        height={580}
       >
         <MKBox
           variant="gradient"
@@ -31,7 +31,7 @@ function Main() {
           </MKTypography>
         </MKBox>
         <div p={60} >
-            <div >
+            <div overflowY="scroll" display="block" height={300}>
               {details.map((details,index) => (
                  <MKBox 
                  key={index}    
