@@ -82,6 +82,16 @@ function Main() {
                 >
                   Visualize
                 </MKButton>
+                <span>{" "}</span>
+                <MKButton
+                  variant="gradient"
+                  color="info"
+                  onClick={() => {
+                    window.open("#", "_blank");
+                  }}
+                >
+                  Details
+                </MKButton>
               </MKBox>
             ))}
           </div>
