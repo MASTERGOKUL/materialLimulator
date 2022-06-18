@@ -4,6 +4,7 @@ import * as React from "react";
 import MKButton from "components/MKButton";
 import axios from "axios";
 import TimeAgo from "timeago-react";
+import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 
 /* eslint-disable */
 function Main() {
@@ -47,7 +48,7 @@ function Main() {
           </MKTypography>
         </MKBox>
         <div p={60}>
-          <div overflowY="scroll" display="block" height={300}>
+          <div display="block" height={300}>
             {results.map((detail, index) => (
               <MKBox
                 key={index.toString()}
@@ -59,7 +60,10 @@ function Main() {
                 mx={10}
                 mt={3}
                 mb={3}
-              >
+                >
+                <FormGroup>
+                  <FormControlLabel control={<Checkbox defaultChecked />} label=""  sx={{position:"absolute", left:900}}/>
+                </FormGroup>
                 <h3>{detail.name}</h3>
                 <p>
                   <strong>Place:</strong> {detail.place}
@@ -82,22 +86,23 @@ function Main() {
                 >
                   Visualize
                 </MKButton>
-                <span>{" "}</span>
+                <span> </span>
                 <MKButton
                   variant="gradient"
                   color="info"
                   onClick={() => {
                     window.open("#", "_blank");
                   }}
-                  >
+                >
                   Details
                 </MKButton>
-                  <span>{" "}</span>
+                <span> </span>
                 <MKButton
                   variant="gradient"
                   height="fit-content"
                   width="fit-content"
                   color="info"
+                  sx={{ position: "relative", left: 450 }}
                   onClick={() => {
                     window.open("#", "_blank");
                   }}

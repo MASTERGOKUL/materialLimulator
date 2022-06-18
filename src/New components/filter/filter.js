@@ -1,6 +1,6 @@
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import React from "react";
-import { Grid } from "@mui/material";
+import { Grid, Switch, FormControlLabel, FormGroup } from "@mui/material";
 import routes from "routes";
 import Cards from "./card/card";
 import Main from "./maincard/main";
@@ -22,6 +22,13 @@ function Filter() {
         }}
         sticky
       />
+      <FormGroup>
+        <FormControlLabel
+          control={<Switch defaultChecked />}
+          label="Label"
+          sx={{ position: "relative", left: 100, top: 150, bgColor: "info" }}
+        />
+      </FormGroup>
       <Grid container spacing={2}>
         <Grid mt={20} xs={2}>
           <Cards

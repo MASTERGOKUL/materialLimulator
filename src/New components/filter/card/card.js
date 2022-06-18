@@ -10,6 +10,11 @@ import FormGroup from "@mui/material/FormGroup";
 /* eslint-disable */
 function Cards({ name, options, selected }) {
   const [selectedOption, setSelectedOption] = React.useState(selected);
+  const[show,setShow]=React.useState(false);
+  
+  const shows = () =>{
+    setShow=(!show);
+  }
 
   const handleChange = (e,option) => {
     e.preventDefault();
@@ -38,11 +43,11 @@ function Cards({ name, options, selected }) {
           mx={2}
           mt={-3}
         >
-          <MKTypography variant="h5" color="white">
+          <MKTypography variant="h5" color="white" sx={{display:"hide"}}  onClick={()=>shows}>
             {name}
           </MKTypography>
         </MKBox>
-        <MKBox pl={7}>
+        <MKBox pl={7} >
           <MKBox width="100%" component="form" method="post" autocomplete="off" mx={10}>
             <Grid container spacing={0}>
               <Grid item xs={0} md={-55} mx={-15}>
