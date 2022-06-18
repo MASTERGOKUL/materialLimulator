@@ -68,7 +68,7 @@ function Filter() {
         <Grid mt={20} xs={2}>
           <Main results={details} />
         </Grid>
-        <Grid mt={2} xs={2} ml={100}>
+        <Grid mt={2} xs={2} ml={110}>
           <Downloadcard
             name="Download"
             btnName={["Download All", "Download in this page", "download selected"]}

@@ -40,7 +40,7 @@ function Main() {
           coloredShadow="info"
           borderRadius="lg"
           p={2}
-          mx={50}
+          mx={60}
           mt={-3}
         >
           <MKTypography variant="h3" color="white">
@@ -62,7 +62,7 @@ function Main() {
                 mb={3}
                 >
                 <FormGroup>
-                  <FormControlLabel control={<Checkbox defaultChecked />} label=""  sx={{position:"absolute", left:900}}/>
+                  <FormControlLabel control={<Checkbox defaultChecked />} label=""  sx={{position:"absolute", left:1040}}/>
                 </FormGroup>
                 <h3>{detail.name}</h3>
                 <p>
@@ -102,7 +102,7 @@ function Main() {
                   height="fit-content"
                   width="fit-content"
                   color="info"
-                  sx={{ position: "relative", left: 450 }}
+                  sx={{ position: "relative", left: 640 }}
                   onClick={() => {
                     window.open("#", "_blank");
                   }}
