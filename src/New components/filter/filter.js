@@ -5,6 +5,7 @@ import routes from "routes";
 import Cards from "./card/card";
 import Main from "./maincard/main";
 import details from "./maincard/maincarddetails";
+import Downloadcard from "./download card/download";
 
 // http://143.110.249.208:3000/items/pcd_instance?fields=*,io_files.directus_files_id&search=chand
 function Filter() {
@@ -66,6 +67,12 @@ function Filter() {
         </Grid>
         <Grid mt={20} xs={2}>
           <Main results={details} />
+        </Grid>
+        <Grid mt={2} xs={2} ml={100}>
+          <Downloadcard
+            name="Download"
+            btnName={["Download All", "Download in this page", "download selected"]}
+          />
         </Grid>
       </Grid>
     </>
