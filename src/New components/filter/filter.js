@@ -5,6 +5,7 @@ import routes from "routes";
 import Cards from "./card/card";
 import Main from "./maincard/main";
 import details from "./maincard/maincarddetails";
+
 // http://143.110.249.208:3000/items/pcd_instance?fields=*,io_files.directus_files_id&search=chand
 function Filter() {
   return (

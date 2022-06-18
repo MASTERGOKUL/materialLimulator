@@ -89,8 +89,20 @@ function Main() {
                   onClick={() => {
                     window.open("#", "_blank");
                   }}
-                >
+                  >
                   Details
+                </MKButton>
+                  <span>{" "}</span>
+                <MKButton
+                  variant="gradient"
+                  height="fit-content"
+                  width="fit-content"
+                  color="info"
+                  onClick={() => {
+                    window.open("#", "_blank");
+                  }}
+                >
+                  Download
                 </MKButton>
               </MKBox>
             ))}
