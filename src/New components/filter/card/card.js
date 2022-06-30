@@ -8,15 +8,13 @@ import FormControl from "@mui/material/FormControl";
 import FormGroup from "@mui/material/FormGroup";
 
 /* eslint-disable */
-function Cards({ name, options, selected }) {
-  const [selectedOption, setSelectedOption] = React.useState(selected);
+function Cards({ name, options, selected, onChange }) {
   const [show, setShow] = React.useState(false);
-
   const handleChange = (e, option) => {
     e.preventDefault();
-    console.log(option);
-    setSelectedOption(option);
+    onChange(option);
   };
+  React.useEffect(() => {}, [selected]);
   return (
     <div item xs={0} sm={0} md={0} lg={0} xl={3} ml={{ xs: 0, lg: 0 }} height="auto">
       <MKBox
@@ -59,7 +57,7 @@ function Cards({ name, options, selected }) {
                             <FormControlLabel
                               key={index.toString()}
                               control={
-                                <Checkbox checked={selectedOption === option ? true : false} onChange={(e) => handleChange(e, option)} name="gilad" />
+                                <Checkbox checked={selected === option ? true : false} onChange={(e) => handleChange(e, option)} name="gilad" />
                               }
                               label={option.toUpperCase()}
                             />

@@ -28,7 +28,8 @@ import Presentation from "layouts/pages/presentation";
 
 // Material Kit 2 React routes
 import routes from "routes";
-import Filter from "New components/filter/filter";
+import Filter1 from "New components/filter/filter1";
+import Filter2 from "New components/filter/filter2";
 import SignInPage from "layouts/pages/authentication/sign-in";
 import SignUpBasic from "New components/singnup/singnup";
 import AboutUs from "pages/LandingPages/AboutUs";
@@ -61,7 +62,8 @@ export default function App() {
       <Routes>
         {getRoutes(routes)}
         <Route path="/presentation" element={<Presentation />} />
-        <Route path="/filter" element={<Filter />} />
+        <Route path="/filter/segmented" element={<Filter1 />} />
+        <Route path="/filter/io" element={<Filter2 />} />
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/signup" element={<SignUpBasic />} />
         <Route path="/about" element={<AboutUs />} />

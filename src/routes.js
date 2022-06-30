@@ -29,7 +29,7 @@ import Icon from "@mui/material/Icon";
 // import ProgressBars from "layouts/sections/elements/progress-bars";
 // import Toggles from "layouts/sections/elements/toggles";
 // import Typography from "layouts/sections/elements/typography";
-import Filter from "New components/filter/filter";
+import Filter1 from "New components/filter/filter1";
 import AboutUs from "pages/LandingPages/AboutUs";
 
 const routes = [
@@ -88,8 +88,8 @@ const routes = [
   },
   {
     name: "filter",
-    route: "/filter",
-    component: <Filter />,
+    route: "/filter/segmented",
+    component: <Filter1 />,
   },
   {
     name: "pricing",
