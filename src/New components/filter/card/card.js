@@ -44,8 +44,6 @@ function Cards({ name, options, selected, onChange }) {
         >
           <MKTypography variant="h5" color="white">
           {name}{show ? <ArrowDropUpIcon   /> : <ArrowDropDownIcon />}
-            
-            
           </MKTypography>
           
         </MKBox>

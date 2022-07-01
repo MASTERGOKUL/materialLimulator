@@ -84,60 +84,80 @@ function Filter1() {
           >
             <FormGroup>
               <FormControlLabel
-                control={<Switch checked={checked} onChange={handleChange} />}
+                control={
+                  <Switch sx={{ color: "white" }} checked={checked} onChange={handleChange} />
+                }
                 label={checked ? "Segmented files only" : "IO files only"}
                 sx={{ position: "relative", bgColor: "info", color: "#fff" }}
               />
             </FormGroup>
           </MKBox>
-          <Cards
-            name="  Environment"
-            options={["clear", "rainy", "foggy", "dusty", "all"]}
-            selected={env}
-            onChange={setEnv}
-          />
-          <Cards
-            name="  Datatype"
-            options={["field", "simulated", "all"]}
-            selected={datatype}
-            onChange={setDatatype}
-          />
-          <Cards
-            name="  Point Record"
-            options={["xyz", "xyzl", "xyzrgb", "xyzlrgb", "all"]}
-            selected={pointrecord}
-            onChange={setPointrecord}
-          />
-          <Cards
-            name="  Terrain"
-            options={["urban", "semi-urban", "rural", "forest", "all"]}
-            selected={terrain}
-            onChange={setTerrain}
-          />
-          <Cards
-            name="  Sensor types"
-            options={["als", "mls", "tls", "uls", "all"]}
-            selected={sensor}
-            onChange={setSensor}
-          />
-          <Cards
-            name="  Charge"
-            options={["Free", "Paid", "all"]}
-            selected={charge}
-            onChange={setCharge}
-          />
-          <Cards
-            name="  Accuracy"
-            options={["0-5cm", "5-10cm", "10-15cm", "15-20cm", "20-abovecm", "all"]}
-            selected={accuracy}
-            onChange={setAccuracy}
-          />
-          <Cards
-            name="  Data Density"
-            options={["<1", "1-5", "5-10", "10-15", "15-25", "25-50", "above50", "all"]}
-            selected={dataDensity}
-            onChange={setDataDensity}
-          />
+          <Grid
+            sx={{
+              height: " 700px",
+              display: "block",
+              position: "fixed",
+              overflowX: "clip",
+              overflowY: "scroll",
+              "&::-webkit-scrollbar": {
+                width: "5px",
+                height: "5px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                borderRadius: "30px",
+                background: "#4D8CC9",
+              },
+            }}
+          >
+            <Cards
+              name="  Environment"
+              options={["clear", "rainy", "foggy", "dusty", "all"]}
+              selected={env}
+              onChange={setEnv}
+            />
+            <Cards
+              name="  Datatype"
+              options={["field", "simulated", "all"]}
+              selected={datatype}
+              onChange={setDatatype}
+            />
+            <Cards
+              name="  Point Record"
+              options={["xyz", "xyzl", "xyzrgb", "xyzlrgb", "all"]}
+              selected={pointrecord}
+              onChange={setPointrecord}
+            />
+            <Cards
+              name="  Terrain"
+              options={["urban", "semi-urban", "rural", "forest", "all"]}
+              selected={terrain}
+              onChange={setTerrain}
+            />
+            <Cards
+              name="  Sensor types"
+              options={["als", "mls", "tls", "uls", "all"]}
+              selected={sensor}
+              onChange={setSensor}
+            />
+            <Cards
+              name="  Charge"
+              options={["Free", "Paid", "all"]}
+              selected={charge}
+              onChange={setCharge}
+            />
+            <Cards
+              name="  Accuracy"
+              options={["0-5cm", "5-10cm", "10-15cm", "15-20cm", "20-abovecm", "all"]}
+              selected={accuracy}
+              onChange={setAccuracy}
+            />
+            <Cards
+              name="  Data Density"
+              options={["<1", "1-5", "5-10", "10-15", "15-25", "25-50", "above50", "all"]}
+              selected={dataDensity}
+              onChange={setDataDensity}
+            />
+          </Grid>
         </Grid>
         <Grid mt={20} xs={2} ml={40}>
           <Main

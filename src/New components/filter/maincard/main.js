@@ -113,7 +113,7 @@ function Main({ checked , filterParams }) {
             >
               <FormControlLabel
                 control={
-                  <Checkbox checked={checkList[index]} onChange={(e) => handleChange(e, index)} />
+                  <Checkbox  sx={{border: "2px solid #92aed4",borderRadius: "0.35rem",width: "1rem",height: "1rem"}} checked={checkList[index]} onChange={(e) => handleChange(e, index)} />
                 }
                 label=""
                 sx={{ position: "absolute", left: 1040 }}
@@ -163,7 +163,7 @@ function Main({ checked , filterParams }) {
                 Visualize
               </MKButton>
               <span> </span>
-              <MKButton
+              {/*<MKButton
                 variant="gradient"
                 color="info"
                 onClick={() => {
@@ -171,14 +171,14 @@ function Main({ checked , filterParams }) {
                 }}
               >
                 Details
-              </MKButton>
+              </MKButton>*/}
               <span> </span>
               <MKButton
                 variant="gradient"
                 height="fit-content"
                 width="fit-content"
                 color="info"
-                sx={{ position: "relative", left: 640 }}
+                sx={{ position: "relative", left: 730 }}
                 onClick={() => {
                   window.open("#", "_blank");
                 }}

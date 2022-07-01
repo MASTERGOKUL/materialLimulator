@@ -1,5 +1,7 @@
 // @mui material components
 import Icon from "@mui/material/Icon";
+import Search from "@mui/icons-material/Search";
+import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
 // @mui icons
 // import GitHubIcon from "@mui/icons-material/GitHub";
@@ -44,7 +46,7 @@ const routes = [
   {
     name: "about us",
     route: "/about",
-    icon: <Icon>info</Icon>,
+    icon: <Icon>dashboard</Icon>,
     component: <AboutUs />,
   },
   /* 
@@ -61,13 +63,13 @@ const routes = [
   {
     name: "search",
     route: "/filter/segmented",
-    icon: <icon>search</icon>,
+    icon: <Search />,
     component: <Filter1 />,
   },
   {
     name: "pricing",
     route: "#",
-    icon: <icon>attachmoney</icon>,
+    icon: <CurrencyRupeeIcon />,
     component: "",
   },
   // {
