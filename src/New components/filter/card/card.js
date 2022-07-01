@@ -5,6 +5,8 @@ import * as React from "react";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import FormGroup from "@mui/material/FormGroup";
 
 /* eslint-disable */
@@ -28,49 +30,59 @@ function Cards({ name, options, selected, onChange }) {
         mb={{ xs: 5, sm: 5, md: 5 }}
         mx={5}
       >
-
         <MKBox
           variant="gradient"
           bgColor="info"
           coloredShadow="info"
           borderRadius="lg"
           p={2}
-          mx={show?2:0}
+          pt={1.2}
+          pb={1.2}
+          mx={show ? 2 : 0}
           mt={-3}
           onClick={() => setShow(!show)}
         >
-          <MKTypography variant="h5" color="white"  >
-            {name}
+          <MKTypography variant="h5" color="white">
+          {name}{show ? <ArrowDropUpIcon   /> : <ArrowDropDownIcon />}
+            
+            
           </MKTypography>
+          
         </MKBox>
-        {/*hiding and unding div element*/ }
-        {show && <>
-          <MKBox pl={7} >
-            <MKBox width="100%" component="form" method="post" autocomplete="off" mx={10}>
-              <Grid container spacing={0}>
-                <Grid item xs={0} md={-55} mx={-15}>
-                  <h5>
-                    <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-                      <FormGroup>
-                        {options.map((option, index) => {
-                          return (
-                            <FormControlLabel
-                              key={index.toString()}
-                              control={
-                                <Checkbox checked={selected === option ? true : false} onChange={(e) => handleChange(e, option)} name="gilad" />
-                              }
-                              label={option.toUpperCase()}
-                            />
-                          );
-                        })}
-                      </FormGroup>
-                    </FormControl>
-                  </h5>
+        {/*hiding and unding div element*/}
+        {show && (
+          <>
+            <MKBox pl={7}>
+              <MKBox width="100%" component="form" method="post" autocomplete="off" mx={10}>
+                <Grid container spacing={0}>
+                  <Grid item xs={0} md={-55} mx={-15}>
+                    <h5>
+                      <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+                        <FormGroup>
+                          {options.map((option, index) => {
+                            return (
+                              <FormControlLabel
+                                key={index.toString()}
+                                control={
+                                  <Checkbox
+                                    checked={selected === option ? true : false}
+                                    onChange={(e) => handleChange(e, option)}
+                                    name="gilad"
+                                  />
+                                }
+                                label={option.toUpperCase()}
+                              />
+                            );
+                          })}
+                        </FormGroup>
+                      </FormControl>
+                    </h5>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </MKBox>
             </MKBox>
-          </MKBox></>}
-
+          </>
+        )}
       </MKBox>
     </div>
   );

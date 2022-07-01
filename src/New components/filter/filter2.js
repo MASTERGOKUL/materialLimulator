@@ -2,6 +2,7 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import React from "react";
 import { Grid, Switch, FormControlLabel, FormGroup } from "@mui/material";
 import routes from "routes";
+import MKBox from "components/MKBox";
 import { useNavigate } from "react-router-dom";
 import Cards from "./card/card";
 import Main from "./maincard/main";
@@ -28,6 +29,7 @@ function Filter2() {
     event.preventDefault();
     navigate("/filter/segmented");
   };
+
   return (
     <>
       <DefaultNavbar
@@ -42,15 +44,46 @@ function Filter2() {
         }}
         sticky
       />
-      <FormGroup>
-        <FormControlLabel
-          control={<Switch checked={checked} onChange={handleChange} />}
-          label={checked ? "Segmented files only" : "IO files only"}
-          sx={{ position: "relative", left: 100, top: 150, bgColor: "info" }}
-        />
-      </FormGroup>
+
       <Grid container spacing={2}>
-        <Grid mt={20} xs={2}>
+        <Grid
+          mt={20}
+          xs={2}
+          sx={{
+            height: " 800px",
+            display: "block",
+            position: "fixed",
+            overflowX: "clip",
+            overflowY: "scroll",
+            "&::-webkit-scrollbar": {
+              width: "5px",
+              height: "5px",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              borderRadius: "30px",
+              background: "#4D8CC9",
+            },
+          }}
+        >
+          <MKBox
+            variant="gradient"
+            bgColor="info"
+            coloredShadow="info"
+            borderRadius="lg"
+            p={1}
+            pt={0.5}
+            pb={0.5}
+            mx={5}
+            mt={2}
+          >
+            <FormGroup>
+              <FormControlLabel
+                control={<Switch checked={checked} onChange={handleChange} />}
+                label={checked ? "Segmented files only" : "IO files only"}
+                sx={{ position: "relative", bgColor: "info" }}
+              />
+            </FormGroup>
+          </MKBox>
           <Cards
             name="  Labels"
             options={["A", "B", "C", "all"]}
@@ -106,7 +139,7 @@ function Filter2() {
             onChange={setDataDensity}
           />
         </Grid>
-        <Grid mt={20} xs={2}>
+        <Grid mt={20} xs={2} ml={40}>
           <Main
             checked={checked}
             filterParams={{

@@ -31,51 +31,23 @@ import Icon from "@mui/material/Icon";
 // import Typography from "layouts/sections/elements/typography";
 import Filter1 from "New components/filter/filter1";
 import AboutUs from "pages/LandingPages/AboutUs";
+import Presentation from "pages/Presentation";
+// import Presentation from "pages/Presentation";
 
 const routes = [
   {
     name: "Home",
-    icon: <Icon>dashboard</Icon>,
-    columns: 1,
-    rowsPerColumn: 2,
-    /* collapse: [
-      {
-        name: "landing pages",
-        collapse: [
-          {
-            name: "about us",
-            route: "/pages/landing-pages/about-us",
-            component: <AboutUs />,
-          },
-          {
-            name: "contact us",
-            route: "/pages/landing-pages/contact-us",
-            component: <ContactUs />,
-          },
-          {
-            name: "author",
-            route: "/pages/landing-pages/author",
-            component: <Author />,
-          },
-        ],
-      },
-      {
-        name: "account",
-        collapse: [
-          {
-            name: "sign in",
-            route: "/pages/authentication/sign-in",
-            component: <SignIn />,
-          },
-        ],
-      },
-    ], */
+    route: "/home",
+    icon: <Icon>home</Icon>,
+    component: <Presentation />,
   },
   {
     name: "about us",
     route: "/about",
+    icon: <Icon>info</Icon>,
     component: <AboutUs />,
   },
+  /* 
   {
     name: "services",
     route: "#",
@@ -85,15 +57,17 @@ const routes = [
     name: "portfolio",
     route: "#",
     component: "",
-  },
+  },   */
   {
-    name: "filter",
+    name: "search",
     route: "/filter/segmented",
+    icon: <icon>search</icon>,
     component: <Filter1 />,
   },
   {
     name: "pricing",
     route: "#",
+    icon: <icon>attachmoney</icon>,
     component: "",
   },
   // {

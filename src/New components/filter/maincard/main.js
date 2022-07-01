@@ -81,7 +81,7 @@ function Main({ checked , filterParams }) {
         borderRadius="xl"
         shadow="lg"
         display="grid"
-        position="fixed"
+        position="absolute"
         mb={10}
         mx={5}
       >
