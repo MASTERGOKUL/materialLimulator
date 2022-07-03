@@ -4,8 +4,7 @@ import * as React from "react";
 import MKButton from "components/MKButton";
 import axios from "axios";
 import TimeAgo from "timeago-react";
-import { Checkbox, FormControlLabel } from "@mui/material";
-
+import { Checkbox, FormControlLabel, Pagination, Typography } from "@mui/material";
 /* eslint-disable */
 function Main({ checked, filterParams }) {
   const [results, setResults] = React.useState([]);
@@ -82,7 +81,7 @@ function Main({ checked, filterParams }) {
         shadow="lg"
         sx={{
           height: " 800px",
-          width:"1180px",
+          width: "1180px",
           display: "block",
           position: "fixed",
           overflowX: "clip",
@@ -90,6 +89,7 @@ function Main({ checked, filterParams }) {
           "&::-webkit-scrollbar": {
             width: "5px",
             height: "5px",
+            zIndex:2
           },
           "&::-webkit-scrollbar-thumb": {
             borderRadius: "30px",
@@ -99,41 +99,42 @@ function Main({ checked, filterParams }) {
         mb={10}
         mx={5}
       >
-        {/*placeholder box 
+        {/*placeholder box */}
         <MKBox
           variant="gradient"
           bgColor="white"
           coloredShadow="info"
           zIndex={1}
+          pl={7}
+          py={1}
+          pr={15}
           borderRadius="lg"
-          pb={5}
-          pr={20}
-          mx={0}
           position="fixed"
-        ></MKBox>*/}
+        >
+          <Typography variant="h5">
+        Results : {results.length} Selected: </Typography>
+        </MKBox>
 
         {/*filter name box */}
-      
-          <MKBox
-            variant="gradient"
-            bgColor="info"
-            coloredShadow="info"
-            borderRadius="lg"
-            p={2}
-            mx={60}
-            zIndex={2}
-            position="fixed"
-            mt={-3}
-          >
-            <MKTypography variant="h3" color="white">
-              <p>Filter Results</p>
-            </MKTypography>
-            
-        
+
+        <MKBox
+          variant="gradient"
+          bgColor="info"
+          coloredShadow="info"
+          borderRadius="lg"
+          p={2}
+          mx={60}
+          zIndex={2}
+          position="fixed"
+          mt={-3}
+        >
+          <MKTypography variant="h3" color="white">
+            <p>Filter Results</p>
+          </MKTypography>
         </MKBox>
         {/*main card elements box */}
 
-        <div p={60}>
+        <MKBox  marginTop={7}>
           {results.map((detail, index) => (
             <MKBox
               key={index.toString()}
@@ -155,6 +156,7 @@ function Main({ checked, filterParams }) {
                       width: "1rem",
                       height: "1rem",
                     }}
+                    className="ckb"
                     checked={checkList[index]}
                     onChange={(e) => handleChange(e, index)}
                   />
@@ -231,7 +233,9 @@ function Main({ checked, filterParams }) {
               </MKButton>
             </MKBox>
           ))}
-        </div>
+        </MKBox>
+        <MKBox align="center" pl={50} pb={10}>
+          <Pagination count={10} color="info"/></MKBox>
       </MKBox>
     </div>
   );

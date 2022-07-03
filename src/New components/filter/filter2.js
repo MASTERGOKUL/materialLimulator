@@ -79,7 +79,7 @@ function Filter2() {
           >
             <FormGroup>
               <FormControlLabel
-                control={<Switch color="white" checked={checked} onChange={handleChange} />}
+                control={<Switch color="info" checked={checked} onChange={handleChange} />}
                 label={checked ? "Segmented files only" : "IO files only"}
                 sx={{
                   position: "relative",
@@ -109,6 +109,7 @@ function Filter2() {
               name="  Labels"
               options={["A", "B", "C", "all"]}
               selected={labels}
+              sx={{ height: "10px", display: "block", overflowY: "scroll" }}
               onChange={setLabels}
             />
             <Cards
