@@ -7,10 +7,10 @@ import TimeAgo from "timeago-react";
 import { Checkbox, FormControlLabel } from "@mui/material";
 
 /* eslint-disable */
-function Main({ checked , filterParams }) {
+function Main({ checked, filterParams }) {
   const [results, setResults] = React.useState([]);
   const [checkList, setCheckList] = React.useState([]);
-  const [filterString , setFilterString] = React.useState("");
+  const [filterString, setFilterString] = React.useState("");
   const handleChange = (e, index) => {
     e.preventDefault();
     const newCheckList = [...checkList];
@@ -19,33 +19,33 @@ function Main({ checked , filterParams }) {
   };
   const handlleFilterString = (filterParam) => {
     var filter = "?filter=";
-    if(filterParam.env !== "all"){
+    if (filterParam.env !== "all") {
       filter = filter + "&environment=" + filterParam.env;
     }
-    if(filterParam.datatype !== "all"){
+    if (filterParam.datatype !== "all") {
       filter = filter + "&data_type=" + filterParam.datatype;
     }
-    if(filterParam.pointrecord !== "all"){
+    if (filterParam.pointrecord !== "all") {
       filter = filter + "&point_record=" + filterParam.pointrecord;
     }
-    if(filterParam.terrain !== "all"){
+    if (filterParam.terrain !== "all") {
       filter = filter + "&terrain=" + filterParam.terrain;
     }
-    if(filterParam.sensor !== "all"){
+    if (filterParam.sensor !== "all") {
       filter = filter + "&sensor=" + filterParam.sensor;
     }
-    if(filterParam.charge !== "all"){
+    if (filterParam.charge !== "all") {
       filter = filter + "&charge=" + filterParam.charge;
     }
-    if(filterParam.dataDensity !== "all"){
+    if (filterParam.dataDensity !== "all") {
       filter = filter + "&data_density=" + filterParam.dataDensity;
     }
-    if(filterParam.accuracy !== "all"){
+    if (filterParam.accuracy !== "all") {
       filter = filter + "&accuracy=" + filterParam.accuracy;
     }
     console.log(filter);
     setFilterString(filter);
-  }
+  };
   React.useEffect(() => {
     handlleFilterString(filterParams);
     filterData();
@@ -75,29 +75,64 @@ function Main({ checked , filterParams }) {
       });
   };
   return (
-    <div item xs={0} sm={0} mt={0} lg={0} xl={3} ml={0}>
+    <div item xs={0} sm={0} mt={100} lg={0} xl={3} ml={0}>
       <MKBox
         bgColor="white"
         borderRadius="xl"
         shadow="lg"
-        display="grid"
-        position="absolute"
+        sx={{
+          height: " 800px",
+          width:"1180px",
+          display: "block",
+          position: "fixed",
+          overflowX: "clip",
+          overflowY: "scroll",
+          "&::-webkit-scrollbar": {
+            width: "5px",
+            height: "5px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            borderRadius: "30px",
+            background: "#4D8CC9",
+          },
+        }}
         mb={10}
         mx={5}
       >
+        {/*placeholder box 
         <MKBox
           variant="gradient"
-          bgColor="info"
+          bgColor="white"
           coloredShadow="info"
+          zIndex={1}
           borderRadius="lg"
-          p={2}
-          mx={60}
-          mt={-3}
-        >
-          <MKTypography variant="h3" color="white">
-            <p>Filter Results</p>
-          </MKTypography>
+          pb={5}
+          pr={20}
+          mx={0}
+          position="fixed"
+        ></MKBox>*/}
+
+        {/*filter name box */}
+      
+          <MKBox
+            variant="gradient"
+            bgColor="info"
+            coloredShadow="info"
+            borderRadius="lg"
+            p={2}
+            mx={60}
+            zIndex={2}
+            position="fixed"
+            mt={-3}
+          >
+            <MKTypography variant="h3" color="white">
+              <p>Filter Results</p>
+            </MKTypography>
+            
+        
         </MKBox>
+        {/*main card elements box */}
+
         <div p={60}>
           {results.map((detail, index) => (
             <MKBox
@@ -113,7 +148,16 @@ function Main({ checked , filterParams }) {
             >
               <FormControlLabel
                 control={
-                  <Checkbox  sx={{border: "2px solid #92aed4",borderRadius: "0.35rem",width: "1rem",height: "1rem"}} checked={checkList[index]} onChange={(e) => handleChange(e, index)} />
+                  <Checkbox
+                    sx={{
+                      border: "2px solid #92aed4",
+                      borderRadius: "0.35rem",
+                      width: "1rem",
+                      height: "1rem",
+                    }}
+                    checked={checkList[index]}
+                    onChange={(e) => handleChange(e, index)}
+                  />
                 }
                 label=""
                 sx={{ position: "absolute", left: 1040 }}
