@@ -1,4 +1,5 @@
 import { Grid } from "@mui/material";
+
 import MKButton from "components/MKButton";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -9,7 +10,7 @@ import FormGroup from "@mui/material/FormGroup";
 /* eslint-disable */
 function Downloadcard({ name, btnName }) {
   return (
-    <div xl={3} height="auto" >
+    <div xl={3} height="auto">
       <MKBox
         bgColor="white"
         position="fixed"
@@ -49,7 +50,7 @@ function Downloadcard({ name, btnName }) {
                             height="fit-content"
                             width="fit-content"
                             color="info"
-                            sx={{mt:2 }}
+                            sx={{ mt: 2 }}
                           >
                             {btnName}
                           </MKButton>

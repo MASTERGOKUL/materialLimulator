@@ -7,11 +7,20 @@ import TimeAgo from "timeago-react";
 import { Checkbox, FormControlLabel, Pagination, Typography } from "@mui/material";
 /* eslint-disable */
 function Main({ checked, filterParams }) {
+
+  const [checkedBoxes,setCheckedBoxes]=React.useState(0);
   const [results, setResults] = React.useState([]);
   const [checkList, setCheckList] = React.useState([]);
   const [filterString, setFilterString] = React.useState("");
   const handleChange = (e, index) => {
     e.preventDefault();
+    const isChecked = e.target.checked
+    if (isChecked) {
+      setCheckedBoxes(checkedBoxes+1)
+    }
+    else {
+      setCheckedBoxes(checkedBoxes-1)
+    }
     const newCheckList = [...checkList];
     newCheckList[index] = !newCheckList[index];
     setCheckList(newCheckList);
@@ -89,7 +98,7 @@ function Main({ checked, filterParams }) {
           "&::-webkit-scrollbar": {
             width: "5px",
             height: "5px",
-            zIndex:2
+            zIndex: 2,
           },
           "&::-webkit-scrollbar-thumb": {
             borderRadius: "30px",
@@ -104,15 +113,20 @@ function Main({ checked, filterParams }) {
           variant="gradient"
           bgColor="white"
           coloredShadow="info"
+          maxWidth="400px"
+          width="100"
           zIndex={1}
-          pl={7}
+          pl={6}
           py={1}
           pr={15}
           borderRadius="lg"
           position="fixed"
         >
           <Typography variant="h5">
-        Results : {results.length} Selected: </Typography>
+            Results &nbsp;  &nbsp;:  &nbsp;{results.length}
+            <br />
+            Selected &nbsp;: &nbsp; {checkedBoxes}
+          </Typography>
         </MKBox>
 
         {/*filter name box */}
@@ -132,9 +146,10 @@ function Main({ checked, filterParams }) {
             <p>Filter Results</p>
           </MKTypography>
         </MKBox>
+        
         {/*main card elements box */}
 
-        <MKBox  marginTop={7}>
+        <MKBox marginTop={10}>
           {results.map((detail, index) => (
             <MKBox
               key={index.toString()}
@@ -235,7 +250,8 @@ function Main({ checked, filterParams }) {
           ))}
         </MKBox>
         <MKBox align="center" pl={50} pb={10}>
-          <Pagination count={10} color="info"/></MKBox>
+          <Pagination count={10} color="info" />
+        </MKBox>
       </MKBox>
     </div>
   );

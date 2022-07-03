@@ -106,8 +106,12 @@ function Filter2() {
             }}
           >
             <Cards
+              searchBar="true"
+              placeholder="Search labels"
               name="  Labels"
-              options={["A", "B", "C", "all"]}
+              // this option names should be in small letter
+              options={["all", "a", "b", "c", "s", "f", "label 1", "label 2"]}
+              // this option names should be in small letter
               selected={labels}
               sx={{ height: "10px", display: "block", overflowY: "scroll" }}
               onChange={setLabels}
