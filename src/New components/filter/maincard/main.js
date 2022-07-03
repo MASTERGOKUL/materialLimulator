@@ -111,14 +111,14 @@ function Main({ checked, filterParams }) {
         {/*placeholder box */}
         <MKBox
           variant="gradient"
-          bgColor="white"
-          coloredShadow="info"
+          bgColor="none"
           maxWidth="400px"
           width="100"
           zIndex={1}
           pl={6}
           py={1}
           pr={15}
+          ml={110}
           borderRadius="lg"
           position="fixed"
         >
