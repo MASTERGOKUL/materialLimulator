@@ -25,6 +25,9 @@ import routes from "routes";
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
 function SignUpBasic() {
+  // for showing profile
+  // const [profile, setProfile] = useState(false);
+
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);

@@ -32,6 +32,7 @@ import Filter2 from "New components/filter/filter2";
 import SignInPage from "layouts/pages/authentication/sign-in";
 import SignUpBasic from "New components/singnup/singnup";
 import AboutUs from "pages/LandingPages/AboutUs";
+import Profile from "New components/profile/profile";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -65,6 +66,7 @@ export default function App() {
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/signup" element={<SignUpBasic />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
     </ThemeProvider>
