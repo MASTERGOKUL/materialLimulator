@@ -7,12 +7,6 @@ import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import Switch from "@mui/material/Switch";
 import Grid from "@mui/material/Grid";
-import MuiLink from "@mui/material/Link";
-
-// @mui icons
-import FacebookIcon from "@mui/icons-material/Facebook";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import GoogleIcon from "@mui/icons-material/Google";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
@@ -71,38 +65,77 @@ function SignUpBasic() {
                 mb={1}
                 textAlign="center"
               >
-                <MKTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-                  Sing Up
+                <MKTypography variant="h4" fontWeight="medium" color="white" m={2}>
+                  Sign Up
                 </MKTypography>
-                <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
-                  <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href="#" variant="body1" color="white">
-                      <FacebookIcon color="inherit" />
-                    </MKTypography>
-                  </Grid>
-                  <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href="#" variant="body1" color="white">
-                      <GitHubIcon color="inherit" />
-                    </MKTypography>
-                  </Grid>
-                  <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href="#" variant="body1" color="white">
-                      <GoogleIcon color="inherit" />
-                    </MKTypography>
-                  </Grid>
-                </Grid>
               </MKBox>
               <MKBox pt={4} pb={3} px={3}>
                 <MKBox component="form" role="form">
-                  <MKBox mb={2}>
-                    <MKInput type="email" label="Email" fullWidth />
-                  </MKBox>
-                  <MKBox mb={2}>
-                    <MKInput type="password" label="Password" fullWidth />
-                  </MKBox>
-                  <MKBox mb={2}>
-                    <MKInput type="password" label="Confirm Password" fullWidth />
-                  </MKBox>
+                  {/* inputs for signup form */}
+                  {/* first name */}
+                  <Grid display="flex">
+                    <MKBox mb={2}>
+                      <MKInput type="text" label="First Name" sx={{ width: 200 }} />
+                    </MKBox>
+                    {/* last name */}
+                    <MKBox mb={2}>
+                      <MKInput type="text" label="Last Name" sx={{ width: 200, ml: 3 }} />
+                    </MKBox>
+                  </Grid>
+                  {/* mail */}
+                  <Grid>
+                    <MKBox mb={2}>
+                      <MKInput type="email" label="Email" fullWidth />
+                    </MKBox>
+                  </Grid>
+                  {/* password */}
+                  <Grid display="flex">
+                    <MKBox mb={2}>
+                      <MKInput type="password" label="Password" sx={{ width: 200 }} />
+                    </MKBox>
+                    <MKBox mb={2}>
+                      <MKInput
+                        type="password"
+                        label="Confirm Password"
+                        sx={{ width: 200, ml: 3 }}
+                      />
+                    </MKBox>
+                  </Grid>
+                  {/* company,industry */}
+                  <Grid display="flex">
+                    <MKBox mb={2}>
+                      <MKInput type="text" label="Company / Organization" sx={{ width: 200 }} />
+                    </MKBox>
+                    <MKBox mb={2}>
+                      <MKInput type="text" label="Industry" sx={{ width: 200, ml: 3 }} />
+                    </MKBox>
+                  </Grid>
+                  {/* country */}
+                  <Grid>
+                    <MKBox mb={2}>
+                      <MKInput type="country" label="Country" fullWidth />
+                    </MKBox>
+                  </Grid>
+                  {/* Phone */}
+                  <Grid display="flex">
+                    <MKBox mb={2}>
+                      <MKInput
+                        type="mobile"
+                        label="Phone"
+                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                        sx={{ width: 200 }}
+                      />
+                    </MKBox>
+                    {/* Aadhar */}
+                    <MKBox mb={2}>
+                      <MKInput
+                        type="text"
+                        label="Aadhar (Indian users Only)"
+                        sx={{ width: 200, ml: 3 }}
+                      />
+                    </MKBox>
+                  </Grid>
+
                   <MKBox display="flex" alignItems="center" ml={-1}>
                     <Switch checked={rememberMe} onChange={handleSetRememberMe} />
                     <MKTypography
@@ -112,7 +145,8 @@ function SignUpBasic() {
                       onClick={handleSetRememberMe}
                       sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
                     >
-                      &nbsp;&nbsp;Remember me
+                      &nbsp;&nbsp;<b style={{ color: "red" }}>* </b>I Agree to the{" "}
+                      <a href="#t&c">Terms and Conditions</a>
                     </MKTypography>
                   </MKBox>
                   <MKBox mt={4} mb={1}>
