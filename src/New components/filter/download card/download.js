@@ -1,4 +1,4 @@
-import { Grid, Input } from "@mui/material";
+import { Grid, Slider } from "@mui/material";
 import MKButton from "components/MKButton";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -8,7 +8,7 @@ import FormGroup from "@mui/material/FormGroup";
 
 /* eslint-disable */
 function Downloadcard({ name, btnName }) {
-const [downloadInput, setDownloadInput] = React.useState(10);
+const [downloadInput, setDownloadInput] = React.useState(20);
 
   const inputHandler = (e) => {
     const downloadNumber = e.target.value.toString();
@@ -58,12 +58,18 @@ const [downloadInput, setDownloadInput] = React.useState(10);
                   <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
                     <FormGroup>
                       {/*selection download*/}
-                      <Input
+                      <Slider
+                        color="secondary"
+                        defaultValue={20}
+                        valueLabelDisplay="auto"
+                        aria-labelledby="discrete-slider"
+                        sx={{ '& .MuiSlider-valueLabel':{backgroundColor:"#39F",color:"#fff"}}}
+                        step={10}
+                        min={10}
                         onChange={inputHandler}
-                        type="number"
-                        placeholder="Enter Download Percentage"
-                        sx={{ marginBottom: "20px" }}
+                        max={100}
                       />
+
                       <MKButton
                         variant="gradient"
                         height="fit-content"
