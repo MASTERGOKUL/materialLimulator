@@ -1,5 +1,4 @@
-import { Grid } from "@mui/material";
-
+import { Grid, Input } from "@mui/material";
 import MKButton from "components/MKButton";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -9,6 +8,21 @@ import FormGroup from "@mui/material/FormGroup";
 
 /* eslint-disable */
 function Downloadcard({ name, btnName }) {
+const [downloadInput, setDownloadInput] = React.useState(10);
+
+  const inputHandler = (e) => {
+    const downloadNumber = e.target.value.toString();
+    if (downloadNumber >100){
+      setDownloadInput(100);
+    }
+    else if(downloadNumber < 10 || downloadNumber === ""){
+
+      setDownloadInput(10);
+    }
+    else{
+      setDownloadInput(downloadNumber);
+    }
+  };
   return (
     <div xl={3} height="auto">
       <MKBox
@@ -43,6 +57,22 @@ function Downloadcard({ name, btnName }) {
                 <h5>
                   <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
                     <FormGroup>
+                      {/*selection download*/}
+                      <Input
+                        onChange={inputHandler}
+                        type="number"
+                        placeholder="Enter Download Percentage"
+                        sx={{ marginBottom: "20px" }}
+                      />
+                      <MKButton
+                        variant="gradient"
+                        height="fit-content"
+                        width="fit-content"
+                        color="info"
+                        sx={{ mt: 2 }}
+                      >
+                        Download {downloadInput}%
+                      </MKButton>
                       {btnName.map((btnName, index) => {
                         return (
                           <MKButton
