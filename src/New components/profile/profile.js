@@ -65,7 +65,7 @@ function Profile() {
         sx={{
           p: 2,
           mx: { xs: 2, lg: 3 },
-          mt: -50,
+          mt: -60,
           mb: 4,
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
