@@ -16,9 +16,10 @@ import DownloadInfo from "./downloadInfo";
 import Transition from "./transition";
 
 function AboutCustomer() {
+  /* user name */
   const username = "UserName";
+  /* value for tabs */
   const [value, setValue] = React.useState("1");
-
   const handleChange = (event: React.SyntheticEvent, newValue: String) => {
     setValue(newValue);
   };
@@ -31,10 +32,12 @@ function AboutCustomer() {
       <Container>
         <Grid container position="relative" alignItems="center" mr={10} right={50}>
           <Grid display="flex" md={5} height="auto">
+            {/* user image */}
             <MKBox>
               <Avatar sx={{ width: 400, height: 400 }} variant="square">
                 Image
               </Avatar>
+              {/* tabs */}
               <TabContext value={value} orientation="vertical">
                 <Box
                   sx={{
@@ -47,24 +50,26 @@ function AboutCustomer() {
                 >
                   <Tabs
                     orientation="vertical"
-                    variant="scrollable"
                     value={value}
                     onChange={handleChange}
                     sx={{ borderColor: "divider", height: "100%" }}
                   >
-                    <Tab label="User Details" defaultChecked />
+                    <Tab label="User Details" />
                     <Tab label="Transition Details" />
                     <Tab label="Download Details" />
                   </Tabs>
-                  <Grid sx={{ position: "relative", left: 500, bottom: 700 }}>
-                    <TabPanel value={0} defaultChecked>
+                  <Grid sx={{ position: "relative", left: 500, bottom: 750 }}>
+                    {/* user details tab */}
+                    <TabPanel value={0}>
                       {" "}
                       <UserDetails />
                     </TabPanel>
                     <TabPanel value={1}>
+                      {/* download details tab */}
                       <DownloadInfo />
                     </TabPanel>
                     <TabPanel value={2}>
+                      {/* tansition details tab */}
                       <Transition />
                     </TabPanel>
                   </Grid>
