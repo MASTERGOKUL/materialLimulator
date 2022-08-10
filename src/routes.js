@@ -2,6 +2,7 @@
 import Icon from "@mui/material/Icon";
 import Search from "@mui/icons-material/Search";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import Profile from "New components/profile/profile";
 
 // @mui icons
 // import GitHubIcon from "@mui/icons-material/GitHub";
@@ -154,26 +155,29 @@ const routes = [
   //         },
   //       ],
   //     },
-  //     {
-  //       name: "elements",
-  //       description: "See all 32 examples",
-  //       dropdown: true,
-  //       collapse: [
-  //         {
-  //           name: "avatars",
-  //           route: "/sections/elements/avatars",
-  //           component: <Avatars />,
-  //         },
-  //         {
-  //           name: "badges",
-  //           route: "/sections/elements/badges",
-  //           component: <Badges />,
-  //         },
-  //         {
-  //           name: "breadcrumbs",
-  //           route: "/sections/elements/breadcrumbs",
-  //           component: <BreadcrumbsEl />,
-  //         },
+  {
+    name: "Profile",
+    description: "User Profile",
+    dropdown: true,
+    icon: <Icon>person</Icon>,
+    collapse: [
+      {
+        name: "User Details",
+        route: "/profile/user",
+        component: <Profile value="0" />,
+      },
+      {
+        name: "Transaction Details",
+        route: "/profile/transaction",
+        component: <Profile value="1" />,
+      },
+      {
+        name: "Download Details",
+        route: "/profile/download",
+        component: <Profile value="2" />,
+      },
+    ],
+  },
   //         {
   //           name: "buttons",
   //           route: "/sections/elements/buttons",
@@ -201,11 +205,12 @@ const routes = [
   //         },
   //       ],
   //     },
-  //   ],
+
   // },
   // {
   //   name: "docs",
   //   icon: <Icon>article</Icon>,
+
   //   collapse: [
   //     {
   //       name: "getting started",

@@ -25,15 +25,15 @@ function UserDetails() {
           User Details
         </MKTypography>
         {/* first name */}
-        <Grid>
-          <Grid>
+        <Grid container spacing={2} width={1000}>
+          <Grid item>
             <TextField
               disabled={enable}
               id="filled-disabled"
               label="First Name"
               defaultValue="Gokul"
               variant="filled"
-              sx={{ width: 400, mb: 1 }}
+              sx={{ width: 400 }}
             />
             {/* second  name */}
             <TextField
@@ -42,10 +42,10 @@ function UserDetails() {
               label="Last Name"
               defaultValue="selavaraj"
               variant="filled"
-              sx={{ width: 400, mb: 1 }}
+              sx={{ width: 400, ml: 5 }}
             />
           </Grid>
-          <Grid>
+          <Grid item>
             {/* email */}
             <TextField
               disabled={enable}
@@ -54,7 +54,7 @@ function UserDetails() {
               defaultValue="1212@gmail.com"
               variant="filled"
               type="email"
-              sx={{ width: 400, mb: 1 }}
+              sx={{ width: 400 }}
             />
             {/* password */}
             <TextField
@@ -64,10 +64,10 @@ function UserDetails() {
               defaultValue="1212@gmail.com"
               type="password"
               variant="filled"
-              sx={{ width: 400, mb: 1 }}
+              sx={{ width: 400, ml: 5 }}
             />
           </Grid>
-          <Grid>
+          <Grid item>
             {/* company */}
             <TextField
               disabled={enable}
@@ -76,7 +76,7 @@ function UserDetails() {
               defaultValue="Codebugged"
               type="text"
               variant="filled"
-              sx={{ width: 400, mb: 1 }}
+              sx={{ width: 400 }}
             />
             {/* industry */}
             <TextField
@@ -86,10 +86,10 @@ function UserDetails() {
               defaultValue="coding"
               type="text"
               variant="filled"
-              sx={{ width: 400, mb: 1 }}
+              sx={{ width: 400, ml: 5 }}
             />
           </Grid>
-          <Grid>
+          <Grid item>
             {/* country */}
             <TextField
               disabled={enable}
@@ -98,7 +98,7 @@ function UserDetails() {
               defaultValue="India"
               type="text"
               variant="filled"
-              sx={{ width: 400, mb: 1 }}
+              sx={{ width: 400 }}
             />
             {/* phone */}
             <TextField
@@ -108,19 +108,21 @@ function UserDetails() {
               defaultValue="1111111111"
               type="tel"
               variant="filled"
-              sx={{ width: 400, mb: 1 }}
+              sx={{ width: 400, ml: 5 }}
             />
           </Grid>
-          {/* AADHAR */}
-          <TextField
-            disabled={enable}
-            id="filled-disabled"
-            label="aadhar"
-            defaultValue="1111111111"
-            type="text"
-            variant="filled"
-            sx={{ width: 400, mb: 1 }}
-          />
+          <Grid item>
+            {/* AADHAR */}
+            <TextField
+              disabled={enable}
+              id="filled-disabled"
+              label="aadhar"
+              defaultValue="1111111111"
+              type="text"
+              variant="filled"
+              sx={{ width: 400 }}
+            />
+          </Grid>
         </Grid>
         {/* edit button */}
         <MKButton

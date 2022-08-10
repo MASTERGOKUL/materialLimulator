@@ -29,8 +29,8 @@ import footerRoutes from "footer.routes";
 // Images
 import bgImage from "assets/images/bg-about-us.jpg";
 import AboutCustomer from "./aboutcustomer";
-
-function Profile() {
+/* eslint-disable */ 
+function Profile({ value }) {
   return (
     <>
       <DefaultNavbar
@@ -65,12 +65,12 @@ function Profile() {
         sx={{
           p: 2,
           mx: { xs: 2, lg: 3 },
-          mt: -60,
+          mt: "-20%",
           mb: 4,
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <AboutCustomer />
+        <AboutCustomer value={value} />
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

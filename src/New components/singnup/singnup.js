@@ -55,7 +55,7 @@ function SignUpBasic() {
       />
       <MKBox px={1} width="100%" height="100vh" mx="auto" position="relative" zIndex={2}>
         <Grid container spacing={1} justifyContent="center" alignItems="center" height="100%">
-          <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
+          <Grid item xl="auto">
             <Card>
               <MKBox
                 variant="gradient"
@@ -68,7 +68,7 @@ function SignUpBasic() {
                 mb={1}
                 textAlign="center"
               >
-                <MKTypography variant="h4" fontWeight="medium" color="white" m={2}>
+                <MKTypography variant="h4" fontWeight="medium" id="signup" color="white" m={2}>
                   Sign Up
                 </MKTypography>
               </MKBox>
