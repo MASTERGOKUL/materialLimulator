@@ -13,11 +13,21 @@ import {
 const useStyles = makeStyles((theme) => ({
   tableContainer: {
     borderRadius: 15,
-    width: "400%",
+    width: "350%",
     height: "500px",
     overFlow: "hidden",
+    "&::-webkit-scrollbar": {
+      width: "10px",
+    },
+    "&::-webkit-scrollbar-thumb": {
+      borderRadius: "5px",
+      background: theme.palette.secondary.dark,
+    },
   },
   tableHeaderCell: {
+    top:0,
+    position:"sticky",
+    height:"50px",
     fontWeight: "bold",
     backgroundColor: theme.palette.secondary.dark,
     color: theme.palette.getContrastText(theme.palette.secondary.dark),
@@ -67,7 +77,7 @@ function MTable() {
       place: "coimbatore",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      file: "Segmented",
       Date: "3/08/2022",
       status: "Downloaded",
     },
@@ -147,7 +157,7 @@ function MTable() {
     <TableContainer component={Paper} className={classes.tableContainer}>
       <table className={classes.table}>
         <tr>
-          <th className={classes.tableHeaderCell} style={{width:"15%"}}>S.no</th>
+          <th className={classes.tableHeaderCell} style={{width:"10%"}}>S.no</th>
           <th className={classes.tableHeaderCell} style={{width:"30%"}}>Data Info</th>
           <th className={classes.tableHeaderCell} style={{width:"25%"}}>File</th>
           <th className={classes.tableHeaderCell} style={{width:"25%"}}>Date</th>
@@ -155,31 +165,31 @@ function MTable() {
         </tr>
           {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => (
             <tr key={index}>
-              <td>{index}</td>
-              <td>
+              <td style={{paddingLeft:50}}>{index+1}</td>
+              <td style={{paddingLeft:50,paddingTop:12}}>
                 <Grid container>
                   <Grid item>
-                    <Typography className={classes.name}>{row.place}</Typography>
+                    <Typography className={classes.name}>Place : {row.place}</Typography>
                     <Typography color="textSecondary" variant="body2">
-                      {row.sensor}
+                      Sensor : {row.sensor}
                     </Typography>
                     <Typography color="textSecondary" variant="body2">
-                      {row.terrain}
+                      Terrain : {row.terrain}
                     </Typography>
                   </Grid>
                 </Grid>
               </td>
-              <td>
-                <Typography color="textSecondary" variant="body2">
+              <td style={{paddingLeft:100}}>
+                <Typography color="textSecondary" variant="h6">
                   {row.file}
                 </Typography>
               </td>
-              <td>
+              <td style={{paddingLeft:80}}>
                 <Typography color="primary" variant="subtitle2">
                   {row.Date}
                 </Typography>
               </td>
-              <td>
+              <td style={{paddingLeft:50,paddingRight:50}}>
                 <Typography
                   className={classes.status}
                   style={{
