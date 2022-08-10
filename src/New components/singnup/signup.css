@@ -1,5 +1,5 @@
-@media screen and (max-width:1000px) {
-    #signup{
+@media screen and (max-width:1200px) {
+    *{
         font-size: 2rem !important;
     }
     
