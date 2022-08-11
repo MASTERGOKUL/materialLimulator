@@ -36,106 +36,98 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     color: theme.palette.secondary.dark,
   },
-  status: {
-    fontWeight: "bold",
-    fontSize: "0.75rem",
-    color: "white",
-    backgroundColor: "grey",
-    borderRadius: 8,
-    padding: "3px 10px",
-    display: "inline-block",
-  },
+
 }));
 
-function DTable() {
+function TTable() {
   const rows = [
     {
       place: "delhi",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      amount: "2000",
       Date: "13/08/2022",
-      status: "Downloaded",
+      account: "ICICXXXXXX1234",
     },
     {
       place: "mumbai",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      amount: "2300",
       Date: "14/08/2022",
-      status: "Downloaded",
+      account: "ICICXXXXXX1234",
     },
     {
       place: "chennai",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      amount: "200",
       Date: "15/08/2022",
-      status: "Pending",
+      account: "ICICXXXXXX1234",
     },
     {
       place: "coimbatore",
       sensor: "mls",
       terrain: "semiurban",
-      file: "Segmented",
+      amount: "3000",
       Date: "3/08/2022",
-      status: "Downloaded",
+      account: "ICICXXXXXX1234",
     },
     {
       place: "chandigar",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      amount: "3000",
       Date: "17/08/2022",
-      status: "Downloading",
+      account: "ICICXXXXXX1234",
     },
     {
       place: "delhi",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      amount: "3000",
       Date: "11/08/2022",
-      status: "Downloaded",
+      account: "ICICXXXXXX1234",
     },
     {
       place: "bangalore",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      amount: "4344",
       Date: "13/08/2022",
-      status: "Pending",
+      account: "ICICXXXXXX1234",
     },
     {
       place: "mangalore",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      amount: "3999",
       Date: "17/08/2022",
-      status: "Downloaded",
+      account: "ICICXXXXXX1234",
     },
     {
       place: "goa",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      amount: "1000",
       Date: "13/08/2022",
-      status: "Downloaded",
+      account: "ICICXXXXXX1234",
     },
     {
       place: "chatiskar",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      amount: "2000",
       Date: "14/08/2022",
-      status: "Downloading",
+      account: "ICICXXXXXX1234",
     },
     {
       place: "manali",
       sensor: "mls",
       terrain: "semiurban",
-      file: "IO",
+      amount: "5000",
       Date: "16/08/2022",
-      status: "Downloading",
+      account: "ICICXXXXXX1234",
     },
   ];
   const classes = useStyles();
@@ -159,9 +151,9 @@ function DTable() {
         <tr>
           <th className={classes.tableHeaderCell} style={{width:"10%"}}>S.no</th>
           <th className={classes.tableHeaderCell} style={{width:"30%"}}>Data Info</th>
-          <th className={classes.tableHeaderCell} style={{width:"25%"}}>File</th>
+          <th className={classes.tableHeaderCell} style={{width:"25%"}}>Account NO</th>
           <th className={classes.tableHeaderCell} style={{width:"25%"}}>Date</th>
-          <th className={classes.tableHeaderCell} style={{width:"100%"}}>Status</th>
+          <th className={classes.tableHeaderCell} style={{width:"100%"}}>Paid</th>
         </tr>
           {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => (
             <tr key={index}>
@@ -179,9 +171,9 @@ function DTable() {
                   </Grid>
                 </Grid>
               </td>
-              <td style={{paddingLeft:100}}>
+              <td style={{paddingLeft:70}}>
                 <Typography color="textSecondary" variant="h6">
-                  {row.file}
+                {row.account}
                 </Typography>
               </td>
               <td style={{paddingLeft:80}}>
@@ -192,14 +184,9 @@ function DTable() {
               <td style={{paddingLeft:50,paddingRight:50}}>
                 <Typography
                   className={classes.status}
-                  style={{
-                    backgroundColor:
-                      (row.status === "Downloaded" && "green") ||
-                      (row.status === "Pending" && "blue") ||
-                      (row.status === "Downloading" && "orange"),
-                  }}
+                  style={{color:"green"}}
                 >
-                  {row.status}
+                ₹{row.amount}
                 </Typography>
               </td>
             </tr>
@@ -222,4 +209,4 @@ function DTable() {
   );
 }
 
-export default DTable;
+export default TTable;

@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MTable from "../table/table";
+import TTable from "../table/table2";
 
 function Transition() {
   return (
@@ -13,7 +13,7 @@ function Transition() {
         <MKTypography variant="h4" color="text" pb={2}>
           Transaction Details
         </MKTypography>
-        <MTable />
+        <TTable />
       </Container>
     </MKBox>
   );
